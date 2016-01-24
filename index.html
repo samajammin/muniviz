@@ -36,13 +36,21 @@
 
 
                <div class='row'>
-                 <div class='col-md-12 col-xs-12 text-center' id="bubble-chart-col">
+                 <div class= 'col-md-12 text-center' id="monthly-volume-chart-col">
+                     <div id="monthly-volume-chart">
+                       <h4> <strong>Issuances by Day</strong>
+                         <a class="reset" href="javascript:volumeChart.filterAll(); dc.redrawAll();" style="display: none;">reset</a>
+                       </h4>
+                     </div>
+                     <aside id="totals"><span id="active">-</span> of <span id="total">-</span> total issuances selected.</aside>
+                 </div>
+                 <!-- <div class='col-md-12 col-xs-12 text-center' id="bubble-chart-col">
                      <div id="sensor-bubble-chart">
                        <h4> <strong>Average Sound Level by Sensor</strong>
                          <a class="reset" href="javascript:sensorBubbleChart.filterAll(); dc.redrawAll();" style="display: none;">reset</a>
                        </h4>
                      </div>
-                 </div>
+                 </div> -->
                </div>
              <!-- /.row -->
 
@@ -57,14 +65,7 @@
                    </div>
                </div>
 
-                 <div class= 'col-md-6 col-xs-12 text-center' id="date-chart-col">
-                     <div id="date-chart">
-                       <h4> <strong>Sound by Day</strong>
-                         <a class="reset" href="javascript:dateBarChart.filterAll(); dc.redrawAll();" style="display: none;">reset</a>
-                       </h4>
-                     </div>
-                     <aside id="totals"><span id="active">-</span> of <span id="total">-</span> total hours selected.</aside>
-                 </div>
+
 
                <div class='col-md-3 col-xs-12 text-center' id="hour-pie-col">
                    <div id="hour-pie">
