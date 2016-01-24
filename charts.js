@@ -1,27 +1,23 @@
-/**
- * Created by samrichards on 3/16/15.
- */
-
-var dowChart = dc.rowChart("#dow-chart");
+// var dowChart = dc.rowChart("#dow-chart");
 //var monthRingChart   = dc.pieChart("#chart-ring-month");
 //var sensorRingChart   = dc.pieChart("#chart-ring-sensor");
-var hourPie = dc.pieChart("#hour-pie");
+// var hourPie = dc.pieChart("#hour-pie");
 //var singleHourRingChart   = dc.pieChart("#singlehour-ring-chart");
 //var datatable = dc.dataTable("#dc-data-table");
 //var hoursChart  = dc.lineChart("#chart-line-soundperhour");
 //var hodChart = dc.barChart('#hod-chart');
-var sensorBubbleChart = dc.bubbleChart('#sensor-bubble-chart');
-var dateBarChart  = dc.barChart("#date-chart");
-var activeHours;
-
-console.log($(window).width());
+// var sensorBubbleChart = dc.bubbleChart('#sensor-bubble-chart');
+// var dateBarChart  = dc.barChart("#date-chart");
+// var activeHours;
 
 //d3.json("../static/js/newhours.json", function(data){
-d3.json("/api/hours/?count=10000", function(data){
+d3.json("https://data.debtwatch.treasurer.ca.gov/api/views/yng6-vaxy/rows.json?accessType=DOWNLOAD", function(data){
     var api_data = data['results'];
             //console.log('hour results received')
             //console.log(api_data.length);
 //            console.log(api_data);
+
+"data" : [ [ 49549, "E892484A-5D5F-40EC-9E55-5AF24EA6A516", 49549, 1453490647, "934811", 1453490647, "934811", null, "2015-0448", "SOLD", "2015-02-18T00:00:00", "Los Angeles", "NO", "NO", null, "Special Districts", "Non-Profit Corporation", "Los Angeles Municipal Improvement Corporation", "Series A-1", "10000000", "10000000", "0", "0", "Commercial paper", "Project, Interim Financing", "Bond proceeds", "0", "0", "VAR", null, null, null, "2015-03-18T00:00:00", "N/A", "S:A-1+", "M:P-1", "F:F-1+", "Not Rated", "LOC", "Wells Fargo Bank National Association", "Neg", "NO", "Wells Fargo Bank National Association", " ", " ", "KNN Public Finance", "Hawkins Delafield & Wood LLP", " ", " ", " ", "Wells Fargo Bank National Association", null, null, "0", "0", "0", null, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
 
 //        sample data object from the api_data array
 //       {
