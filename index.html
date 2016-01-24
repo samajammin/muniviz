@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>CDIAC Dataviz</title>
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/dc/1.7.5/dc.css' rel='stylesheet' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/1.7.5/dc.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="../static/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Custom CSS -->
+    <!-- <link href="../static/css/stylish-portfolio.css" rel="stylesheet"> -->
+    <!-- <link rel="shortcut icon" type="image/png" href="../static/img/soundscore-ico.ico"/> -->
+
+    <!-- Custom Fonts -->
+    <!-- <link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'> -->
+    <!-- <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+   <!-- Charts -->
+    <section id="charts" class="charts">
+        <div class="container-fluid">
+
+
+              <div class='row'>
+                <div class='col-md-12 col-xs-12 text-center' id="bubble-chart-col">
+                    <div id="sensor-bubble-chart">
+                      <h4> <strong>Average Sound Level by Sensor</strong>
+                        <a class="reset" href="javascript:sensorBubbleChart.filterAll(); dc.redrawAll();" style="display: none;">reset</a>
+                      </h4>
+                    </div>
+                </div>
+              </div>
+            <!-- /.row -->
+
+            <div class="row">
+
+              <div class='col-md-3 col-xs-12 text-center' id="dow-chart-col">
+
+                  <div id="dow-chart">
+                     <h4> <strong>Sound by Day of Week</strong>
+                     <a class="reset" href="javascript:dowChart.filterAll(); dc.redrawAll();" style="display: none;">reset</a>
+                    </h4>
+                  </div>
+              </div>
+
+                <div class= 'col-md-6 col-xs-12 text-center' id="date-chart-col">
+                    <div id="date-chart">
+                      <h4> <strong>Sound by Day</strong>
+                        <a class="reset" href="javascript:dateBarChart.filterAll(); dc.redrawAll();" style="display: none;">reset</a>
+                      </h4>
+                    </div>
+                    <aside id="totals"><span id="active">-</span> of <span id="total">-</span> total hours selected.</aside>
+                </div>
+
+              <div class='col-md-3 col-xs-12 text-center' id="hour-pie-col">
+                  <div id="hour-pie">
+                    <h4> <strong>Sound By Hour of Day</strong>
+                     <a class="reset" href="javascript:hourPie.filterAll(); dc.redrawAll();" style="display: none;">reset</a>
+                    </h4>
+                  </div>
+              </div>
+
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+    </section>
+
+
+    <!-- jQuery -->
+    <script src="../static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/js/bootstrap.min.js"></script>
+
+
+    <script src="../static/js/crossfilter.v1.js"></script>
+    <script src="../static/js/d3.v3.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/dc.js"></script>
+    <link href="../static/css/dc.css" rel="stylesheet"/>
+    <script src="../static/js/charts.js"></script>
+    <script src="../static/js/colorbrewer.js"></script>
+</body>
+
+</html>
