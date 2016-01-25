@@ -11,117 +11,299 @@
 // var activeHours;
 var volumeChart = dc.barChart('#monthly-volume-chart');
 
-  // sample issuance
+var cdiac_columns = {
+  "0": "sid",
+  "1": "id",
+  "2": "position",
+  "3": "created_at",
+  "4": "created_meta",
+  "5": "updated_at",
+  "6": "updated_meta",
+  "7": "meta",
+  "8": "CDIAC Number",
+  "9": "Sold Status",
+  "10": "Sale Date",
+  "11": "Issuer County",
+  "12": "MKR Authority",
+  "13": "Local Obligation",
+  "14": "MKR CDIAC Number",
+  "15": "Issuer Group",
+  "16": "Issuer Type",
+  "17": "Issuer",
+  "18": "Project Name",
+  "19": "Principal Amount",
+  "20": "New Money",
+  "21": "Refunding Amount",
+  "22": "Net Issue Discount/ Premium",
+  "23": "Debt Type",
+  "24": "Purpose",
+  "25": "Source of Repayment",
+  "26": "TIC Interest Rate",
+  "27": "NIC Interest Rate",
+  "28": "Interest Type",
+  "29": "Other Interest Type",
+  "30": "Federally Taxable",
+  "31": "First Optional Call Date",
+  "32": "Final Maturity Date",
+  "33": "CAB Flag",
+  "34": "S and P Rating",
+  "35": "Moody Rating",
+  "36": "Fitch Rating",
+  "37": "Other Rating",
+  "38": "Guarantor Flag",
+  "39": "Guarantor",
+  "40": "Sale Type (Comp/Neg)",
+  "41": "Private Placement Flag",
+  "42": "Underwriter",
+  "43": "Purchaser",
+  "44": "Placement Agent",
+  "45": "Financial Advisor",
+  "46": "Bond Counsel",
+  "47": "Co-Bond Counsel",
+  "48": "Disclosure Counsel",
+  "49": "Borrower Counsel",
+  "50": "Trustee",
+  "51": "Issue Costs Pct of Principal Amt",
+  "52": "Total Issuance Costs",
+  "53": "UW Takedown",
+  "54": "UW Mngmt Fee",
+  "55": "UW Expenses",
+  "56": "UW Total Discount/Spread",
+  "57": "Placement Agent Fee",
+  "58": "Financial Advisor Fee",
+  "59": "Bond Counsel Fee",
+  "60": "Co-Bond Counsel Fee",
+  "61": "Disclosure Counsel Fee",
+  "62": "Borrower Counsel Fee",
+  "63": "Trustee Fee",
+  "64": "Credit Enhancement Fee",
+  "65": "Rating Agency Fee",
+  "66": "Other Issuance Expenses"
+};
 
-  // {
-  //   "_index": "issuances",
-  //   "_type": "issuance",
-  //   "_id": "6008",
-  //   "_score": 1,
-  //   "_source": {
-  //       "id": 6008,
-  //       "jurisdiction_id": "country:us/state:ca/county:san_mateo/school_district:las_lomitas_elementary",
-  //       "jurisdiction_name": "Las Lomitas Elementary",
-  //       "closingDate": null,
-  //       "datedDate": "2002-07-01",
-  //       "description": "Election Of 2001",
-  //       "firstExecutionTime": null,
-  //       "formalAwardTime": null,
-  //       "issuerID": 2221,
-  //       "msrbID": "MS130113",
-  //       "msrbURL": "http://emma.msrb.org/IssueView/IssueDetails.aspx?id=MS130113",
-  //       "officialStatementUrl": "http://emma.msrb.org//MS194930-MS170238-MD329739.pdf",
-  //       "preliminaryOfficialStatementUrl": null,
-  //       "totalAmount": 12000000,
-  //       "federallyTaxable": null,
-  //       "projectName": null,
-  //       "sourceOfRepayment": null,
-  //       "purpose": null,
-  //       "trustee": null,
-  //       "debtType": null,
-  //       "saleType": null,
-  //       "isRefunding": false,
-  //       "refundingPercent": null,
-  //       "isCallable": null,
-  //       "hasCreditEnhancement": null
-  //       }
-  //   }
-
-d3.json("http://search.neighborly.com/issuances/_search?size=10000", function(data){
-  var results = data['hits']['hits'];
-  var cf = crossfilter(results);
-  results.forEach(function(d) {
-    if (d._source.datedDate){
-        d.saleDate = new Date(d._source.datedDate);
-        d.saleMonth = d.saleDate.getMonth();
-        d.saleYear = d.saleDate.getFullYear();
-        d.totalAmount = d._source.totalAmount;
-        d.val = 1;
-    }
-  });
+d3.json("data-sample.json", function(data){
+// d3.json("https://data.debtwatch.treasurer.ca.gov/api/views/yng6-vaxy/rows.json", function(data){
+    var api_data = data['data'];
+    console.log(api_data);
+//        first array in data object
+// [ 49549, "E892484A-5D5F-40EC-9E55-5AF24EA6A516", 49549, 1453490647, "934811", 1453490647, "934811", null, "2015-0448", "SOLD", "2015-02-18T00:00:00", "Los Angeles", "NO", "NO", null, "Special Districts", "Non-Profit Corporation", "Los Angeles Municipal Improvement Corporation", "Series A-1", "10000000", "10000000", "0", "0", "Commercial paper", "Project, Interim Financing", "Bond proceeds", "0", "0", "VAR", null, null, null, "2015-03-18T00:00:00", "N/A", "S:A-1+", "M:P-1", "F:F-1+", "Not Rated", "LOC", "Wells Fargo Bank National Association", "Neg", "NO", "Wells Fargo Bank National Association", " ", " ", "KNN Public Finance", "Hawkins Delafield & Wood LLP", " ", " ", " ", "Wells Fargo Bank National Association", null, null, "0", "0", "0", null, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
 
 
+//       {
+//            "id": 1,
+//            "hour": "2015-01-14T00:23:50",
+//            "sound_avg": 79.8006268656716,
+//            "sound_min": 63.2144,
+//            "sound_max": 96.1416,
+//            "sound_std": 56.7724694981303,
+//            "sound_var": 3693.79598253509,
+//            "sound_count": 480,
+//            "sensor": 1
+//        },
+
+    cf = crossfilter(api_data);
     var totalIssuances = cf.groupAll().value();
     d3.select("#total").text(totalIssuances);
     d3.select("#active").text(totalIssuances);
 
-    // function reduceInitial() {
-    //     return { count: 0, total: 0};
+    //custom reduce functions for avg attributes
+    // function reduceAddAvg(att) {
+    //     return function(p, v) {
+    //         ++p.count;
+    //         p.total += v[att];
+    //         if (p.count > 0) {
+    //             p.avg = p.total / p.count;
+    //         }
+    //         else {
+    //             p.avg = 0;
+    //         }
+    //         //totalHours = cf.groupAll().value();
+    //         return p;
+    //     };
     // }
     //
+    // function reduceRemoveAvg(att) {
+    //     return function(p, v) {
+    //         --p.count;
+    //         p.total -= v[att];
+    //         if (p.count > 0) {
+    //             p.avg = p.total / p.count;
+    //         }
+    //         else {
+    //             p.avg = 0;
+    //         }
+    //         //totalHours = cf.groupAll().value();
+    //         return p;
+    //     };
+    // }
+    //
+    // function reduceInitialAvg() {
+    //     return {count: 0, total: 0, avg:0};
+    // }
+    //
+    // // reduce functions for sound attributes
     // function reduceAdd(p, v) {
-    //     p.total += v._source.totalAmount;
-    //     p.count += 1;
+    //     ++p.count;
+    //     p.avg_total += v['sound_avg'];
+    //     if (p.count > 0) { p.avg = p.avg_total / p.count;}
+    //     else { p.avg = 0;}
+    //     p.std_total += v['sound_std'];
+    //     if (p.count > 0) { p.std_avg = p.std_total / p.count;}
+    //     else { p.std_avg = 0;}
+    //     //totalHours = cf.groupAll().value();
     //     return p;
     // }
     //
     // function reduceRemove(p, v) {
-    //     p.total -= v._source.totalAmount;
-    //     p.count -= 1;
+    //     --p.count;
+    //     p.avg_total -= v['sound_avg'];
+    //     if (p.count > 0) { p.avg = p.avg_total / p.count;}
+    //     else { p.avg = 0;}
+    //     p.std_total -= v['sound_std'];
+    //     if (p.count > 0) { p.std_avg = p.std_total / p.count;}
+    //     else { p.std_avg = 0;}
+    //     //totalHours = cf.groupAll().value();
     //     return p;
     // }
+    //
+    //
+    // function reduceInitial() {
+    //     return {count: 0, avg_total: 0, avg:0, std_total:0, std_avg:0};
+    // }
+
+    function reduceInitial() {
+        return {
+            // [ 49549, "E892484A-5D5F-40EC-9E55-5AF24EA6A516", 49549, 1453490647, "934811", 1453490647, "934811", null, "2015-0448", "SOLD", "2015-02-18T00:00:00", "Los Angeles", "NO", "NO", null, "Special Districts", "Non-Profit Corporation", "Los Angeles Municipal Improvement Corporation", "Series A-1", "10000000", "10000000", "0", "0", "Commercial paper", "Project, Interim Financing", "Bond proceeds", "0", "0", "VAR", null, null, null, "2015-03-18T00:00:00", "N/A", "S:A-1+", "M:P-1", "F:F-1+", "Not Rated", "LOC", "Wells Fargo Bank National Association", "Neg", "NO", "Wells Fargo Bank National Association", " ", " ", "KNN Public Finance", "Hawkins Delafield & Wood LLP", " ", " ", " ", "Wells Fargo Bank National Association", null, null, "0", "0", "0", null, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" , 0]
+            total: 0,
+            count: 0
+        };
+    }
+
+    function reduceAdd(p, v) {
+        p.total = p.total + v[19];
+        console.log(p.total);
+        p.count = p.count + 1;
+        return p;
+    }
+
+    function reduceRemove(p, v) {
+        p.total = p.total - v[19];
+        console.log(p.total);
+        p.count = p.count - 1;
+        return p;
+    }
+
+    // var numberFormat = d3.format('.2f');
+    //var numberFormatZero = d3.format('f');
+    // format sales date
+    var parseHour = d3.time.format("%Y-%m-%dT%H:%M:%S").parse;
+    var currencyFormat = d3.format('$f');
+
+    api_data.forEach(function(d) {
+      d[10] = parseHour(d[10]);
+      d[19] = currencyFormat(d[19]);
+      d[67] = d[10].getMonth();
+      d[68] = d[10].getFullYear();
+    });
+
+    //var feb = "2015-02-14T00:23:50"
+    //var february = parseHour(feb);
+    //console.log(feb);
+    //console.log(february);
+    //console.log(d3.time.month(february));
 
     // <!-- todo clean up dimensions, all in one place & only the ones we need -->
-    // var issuancesBySaleDate = cf.dimension(function(d) { return d._source.datedDate; });
-    var issuancesBySaleDate = cf.dimension(function(d) { return d.saleDate; });
-    var issuancesBySaleYear = cf.dimension(function(d) { return d.saleYear; });
-    // var issuancesByCounty = cf.dimension(function(d) { return d[11]; });
-    // var issuancesByIssuer = cf.dimension(function(d) { return d[17]; });
-    // var issuancesByPurpose = cf.dimension(function(d) { return d[24]; });
-    var minDate = issuancesBySaleDate.bottom(2)[1].saleDate;
-    var maxDate = issuancesBySaleDate.top(1)[0].saleDate;
+    var issuancesBySaleDate = cf.dimension(function(d) { return d[10]; });
+    var issuancesByCounty = cf.dimension(function(d) { return d[11]; });
+    var issuancesByIssuer = cf.dimension(function(d) { return d[17]; });
+    var issuancesByPurpose = cf.dimension(function(d) { return d[24]; });
+    debugger;
 
-    var issuanceCountBySaleDate = issuancesBySaleDate.group().reduceSum(function(d) {return d.totalAmount;});
-    var issuanceCountBySaleYear = issuancesBySaleYear.group().reduceCount(function(d) {return d.totalAmount;});
+    // hour = hourDim.groupAll().value();
+
+    // var hourGroupDim = cf.dimension(function (d) {
+    //     var hr = d.hod;
+    //     if (hr <= 2) {
+    //         return 0
+    //     } else if (hr > 2 && hr <= 5) {
+    //         return 1
+    //     } else if (hr > 5 && hr <= 8) {
+    //         return 2
+    //     } else if (hr > 8 && hr <= 11) {
+    //         return 3
+    //     } else if (hr > 11 && hr <= 14) {
+    //         return 4
+    //     } else if (hr > 14 && hr <= 17) {
+    //         return 5
+    //     } else if (hr > 17 && hr <= 20) {
+    //         return 6
+    //     } else {
+    //         return 7
+    //     }
+    // });
+
+    //var monthTotal = monthDim.group().reduceSum(function(d) {return d.sound_avg;});
+    //var hodTotal = hodDim.group().reduceSum(function(d) {return d.sound_avg;});
+    //var dateTotal = dateDim.group().reduceSum(function(d) {return d.sound_avg;});
+    //var dowTotal = dowDim.group().reduceSum(function(d) {return d.sound_avg;});
+    //var dowCount = dowDim.group().reduceCount(function(d) {return d.sound_avg;});
+
+    var dateGroup = issuancesBySaleDate.group().reduce(reduceAdd, reduceRemove, reduceInitial);
+    // var dowAvg = dowDim.group().reduce(reduceAddAvg('sound_avg'), reduceRemoveAvg('sound_avg'), reduceInitialAvg);
+    // var hodAvg = hodDim.group().reduce(reduceAddAvg('sound_avg'), reduceRemoveAvg('sound_avg'), reduceInitialAvg);
+    // var dateAvg = dateDim.group().reduce(reduceAddAvg('sound_avg'), reduceRemoveAvg('sound_avg'), reduceInitialAvg);
+    //var hourAvg = hourDim.group().reduce(reduceAddAvg('sound_avg'), reduceRemoveAvg('sound_avg'), reduceInitialAvg);
+    // var sensorAvg = sensorDim.group().reduce(reduceAdd, reduceRemove, reduceInitial);
+    //var hourGroup = hourGroupDim.group().reduce(reduceAddAvg('sound_avg'), reduceRemoveAvg('sound_avg'), reduceInitialAvg);
+    //var hourGroup = hourGroupDim.group().reduceCount(function(d) {return d.sound_avg;});
+    // var hourGroup = hourGroupDim.group().reduce(reduceAdd, reduceRemove, reduceInitial);
+    // var hodGroup = hodDim.group().reduce(reduceAdd, reduceRemove, reduceInitial);
+
+    //console.log(hourGroup.all());
+
+    var dayOfWeekNames = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+    var shortMonthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+
+
+    var principal = issuancesBySaleDate.group().reduceSum(function(d){return d[19];});
+//            count of this should be 969, not 12... right?
+//    var sound = hourDim.group().reduceSum(function(d) {return d.sound_avg;});
+//    var soundMax = hourDim.group().reduceSum(function(d) {return d.sound_max;});
+//    var soundMin = hourDim.group().reduceSum(function(d) {return d.sound_min;});
+//    var soundCount = hourDim.group().reduceSum(function(d) {return d.sound_count;});
+//    var minHour = hourDim.bottom(1)[0].hour;
+//    var maxHour = hourDim.top(1)[0].hour;
+    //var minMonth = monthDim.bottom(1)[0].month;
+    //var maxMonth = monthDim.top(1)[0].month;
+    var minDate = issuancesBySaleDate.bottom(1)[0][10];
+    var maxDate = issuancesBySaleDate.top(1)[0][10];
+
+    //var sensorTotal = sensorDim.group().reduceSum(function(d) {return d.sound_avg;});
 
 
 // CHARTS!
 
     volumeChart
-        // .width(1000)
-        .width($( "#monthly-volume-chart-col" ).width())
+        .width(600)
+        // .width($( "#date-chart-col" ).width())
         .height(300)
-        .margins({top: 10, right: 100, bottom: 30, left: 100})
+        //.margins({top: 10, right: 50, bottom: 30, left: 40})
         .dimension(issuancesBySaleDate)
-        // .dimension(issuancesBySaleYear)
-        .group(issuanceCountBySaleDate)
-        // .group(issuanceCountBySaleYear)
+        .group(dateGroup)
         .round(dc.round.floor)
         // .alwaysUseRounding(true)
-        .brushOn(true)
+        // .brushOn(true)
         .x(d3.time.scale().domain([minDate,maxDate]))
         // .y(d3.scale.linear().domain([60, 90]))
         //.filter([d3.time.month(parseHour("2015-02-14T00:23:50")),d3.time.month(parseHour("2015-03-14T00:23:50"))])
         //.legend(dc.legend().x(50).y(10).itemHeight(13).gap(5))
         //.elasticY(true)
-        .gap(10);
+        // .gap(3)
         // .colors(["#424242"])
         // .yAxisLabel("Decibels");
 
-        dc.renderAll();
-    });
-
-    // volumeChart.valueAccessor(function(p) {return p.value.avg; });
+    volumeChart.valueAccessor(function(p) {return p.total; });
     // volumeChart.xUnits(function(){return 60;});
 
 //
@@ -433,3 +615,29 @@ d3.json("http://search.neighborly.com/issuances/_search?size=10000", function(da
 //             .tickFormat(function (v) {
 //             return v;
 //         });
+
+
+    dc.renderAll();
+
+    // filter charts on sensor marker clicks
+    // $('.leaflet-marker-icon').on('click', function(e){
+    //     console.log(e);
+    //     console.log(parseInt(e.target.attributes.title.nodeValue));
+    //     var sensorClicked = parseInt(e.target.attributes.title.nodeValue);
+    //     sensorBubbleChart.filterAll();
+    //     sensorBubbleChart.filter(sensorClicked);
+    //     dc.redrawAll();
+    //
+    // });
+    // resize charts on window resize
+    // $(window).on('resize', function(){
+    //     console.log("resize");
+    //     sensorBubbleChart.width($( "#bubble-chart-col" ).width());
+    //     dateBarChart.width($( "#date-chart-col" ).width());
+    //     dowChart.width($( "#dow-chart-col" ).width());
+    //     hourPie.width($( "#hour-pie-col" ).width());
+    //     dc.renderAll();
+    //
+    // });
+
+});

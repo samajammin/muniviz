@@ -23,10 +23,13 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+
   <body>
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>MuniViz!</h1>
+    <!-- Header -->
+    <div class="row" style="background-color: #262E37;">
+      <div class="col-md-12 text-center" style="color: #FFFFFF;">
+        <h1>MuniViz</h1>
+        <aside id="totals"><span id="active">-</span> of <span id="total">-</span> total issuances selected.</aside>
       </div>
     </div>
 
@@ -35,14 +38,13 @@
          <div class="container-fluid">
 
 
-               <div class='row'>
+               <div class='row' style="background-color: #EBEDEE;">
                  <div class= 'col-md-12 text-center' id="monthly-volume-chart-col">
                      <div id="monthly-volume-chart">
-                       <h4> <strong>Issuances by Day</strong>
+                       <h4> <strong>Issuance Volume by Day</strong>
                          <a class="reset" href="javascript:volumeChart.filterAll(); dc.redrawAll();" style="display: none;">reset</a>
                        </h4>
                      </div>
-                     <aside id="totals"><span id="active">-</span> of <span id="total">-</span> total issuances selected.</aside>
                  </div>
                  <!-- <div class='col-md-12 col-xs-12 text-center' id="bubble-chart-col">
                      <div id="sensor-bubble-chart">
@@ -54,7 +56,7 @@
                </div>
              <!-- /.row -->
 
-             <div class="row">
+             <!-- <div class="row">
 
                <div class='col-md-3 col-xs-12 text-center' id="dow-chart-col">
 
@@ -76,7 +78,7 @@
                </div>
 
 
-             </div>
+             </div> -->
              <!-- /.row -->
 
          </div>

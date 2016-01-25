@@ -1,0 +1,781 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "yng6-vaxy",
+      "name" : "CDA All Data",
+      "averageRating" : 0,
+      "category" : "Government",
+      "createdAt" : 1438182783,
+      "description" : "CDIAC All Data",
+      "displayType" : "table",
+      "downloadCount" : 179,
+      "indexUpdatedAt" : 1453491790,
+      "newBackend" : false,
+      "numberOfComments" : 0,
+      "oid" : 16930161,
+      "publicationAppendEnabled" : false,
+      "publicationDate" : 1453490776,
+      "publicationGroup" : 3754099,
+      "publicationStage" : "published",
+      "rowsUpdatedAt" : 1453490737,
+      "rowsUpdatedBy" : "3qdj-b5hf",
+      "tableId" : 7319716,
+      "totalTimesRated" : 0,
+      "viewCount" : 1557,
+      "viewLastModified" : 1453490776,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : 239054380,
+        "name" : "CDIAC Number",
+        "dataTypeName" : "text",
+        "fieldName" : "cdiac_number",
+        "position" : 1,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158769,
+        "width" : 244,
+        "format" : { }
+      }, {
+        "id" : 239054381,
+        "name" : "Sold Status",
+        "dataTypeName" : "text",
+        "fieldName" : "sold_status",
+        "position" : 2,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158770,
+        "width" : 232,
+        "format" : { }
+      }, {
+        "id" : 239054382,
+        "name" : "Sale Date",
+        "dataTypeName" : "calendar_date",
+        "fieldName" : "sale_date",
+        "position" : 3,
+        "renderTypeName" : "calendar_date",
+        "tableColumnId" : 30158771,
+        "width" : 208,
+        "format" : { }
+      }, {
+        "id" : 239054383,
+        "name" : "Issuer County",
+        "dataTypeName" : "text",
+        "fieldName" : "issuer_county",
+        "position" : 4,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158772,
+        "width" : 256,
+        "format" : { }
+      }, {
+        "id" : 239054384,
+        "name" : "MKR Authority",
+        "dataTypeName" : "text",
+        "fieldName" : "mkr_authority",
+        "position" : 5,
+        "renderTypeName" : "text",
+        "tableColumnId" : 31038620,
+        "width" : 100,
+        "format" : { }
+      }, {
+        "id" : 239054385,
+        "name" : "Local Obligation",
+        "dataTypeName" : "text",
+        "fieldName" : "local_obligation",
+        "position" : 6,
+        "renderTypeName" : "text",
+        "tableColumnId" : 31038671,
+        "width" : 100,
+        "format" : { }
+      }, {
+        "id" : 239054386,
+        "name" : "MKR CDIAC Number",
+        "dataTypeName" : "text",
+        "fieldName" : "mkr_cdiac_number",
+        "position" : 7,
+        "renderTypeName" : "text",
+        "tableColumnId" : 31038781,
+        "width" : 100,
+        "format" : { }
+      }, {
+        "id" : 239054387,
+        "name" : "Issuer Group",
+        "dataTypeName" : "text",
+        "fieldName" : "issuer_group",
+        "position" : 8,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158773,
+        "width" : 244,
+        "format" : { }
+      }, {
+        "id" : 239054388,
+        "name" : "Issuer Type",
+        "dataTypeName" : "text",
+        "fieldName" : "issuer_type",
+        "position" : 9,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158774,
+        "width" : 232,
+        "format" : { }
+      }, {
+        "id" : 239054389,
+        "name" : "Issuer",
+        "dataTypeName" : "text",
+        "fieldName" : "issuer",
+        "position" : 10,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158775,
+        "width" : 172,
+        "format" : { }
+      }, {
+        "id" : 239054390,
+        "name" : "Project Name",
+        "dataTypeName" : "text",
+        "fieldName" : "project_name",
+        "position" : 11,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158776,
+        "width" : 244,
+        "format" : { }
+      }, {
+        "id" : 239054391,
+        "name" : "Principal Amount",
+        "dataTypeName" : "number",
+        "fieldName" : "principal_amount",
+        "position" : 12,
+        "renderTypeName" : "number",
+        "tableColumnId" : 30158777,
+        "width" : 292,
+        "format" : { }
+      }, {
+        "id" : 239054392,
+        "name" : "New Money",
+        "dataTypeName" : "number",
+        "fieldName" : "new_money",
+        "position" : 13,
+        "renderTypeName" : "number",
+        "tableColumnId" : 30158778,
+        "width" : 208,
+        "format" : { }
+      }, {
+        "id" : 239054393,
+        "name" : "Refunding Amount",
+        "dataTypeName" : "number",
+        "fieldName" : "refunding_amount",
+        "position" : 14,
+        "renderTypeName" : "number",
+        "tableColumnId" : 30158779,
+        "width" : 292,
+        "format" : { }
+      }, {
+        "id" : 239054394,
+        "name" : "Net Issue Discount/ Premium",
+        "dataTypeName" : "text",
+        "fieldName" : "net_issue_discount",
+        "position" : 15,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158780,
+        "width" : 316,
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 239054395,
+        "name" : "Debt Type",
+        "dataTypeName" : "text",
+        "fieldName" : "debt_type",
+        "position" : 16,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158781,
+        "width" : 208,
+        "format" : { }
+      }, {
+        "id" : 239054396,
+        "name" : "Purpose",
+        "dataTypeName" : "text",
+        "fieldName" : "purpose",
+        "position" : 17,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158782,
+        "width" : 184,
+        "format" : { }
+      }, {
+        "id" : 239054397,
+        "name" : "Source of Repayment",
+        "dataTypeName" : "text",
+        "fieldName" : "source_of_repayment",
+        "position" : 18,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158783,
+        "width" : 328,
+        "format" : { }
+      }, {
+        "id" : 239054398,
+        "name" : "TIC Interest Rate",
+        "dataTypeName" : "number",
+        "fieldName" : "tic_interest_rate",
+        "position" : 19,
+        "renderTypeName" : "number",
+        "tableColumnId" : 30158784,
+        "width" : 304,
+        "format" : { }
+      }, {
+        "id" : 239054399,
+        "name" : "NIC Interest Rate",
+        "dataTypeName" : "number",
+        "fieldName" : "nic_interest_rate",
+        "position" : 20,
+        "renderTypeName" : "number",
+        "tableColumnId" : 30158785,
+        "width" : 304,
+        "format" : { }
+      }, {
+        "id" : 239054400,
+        "name" : "Interest Type",
+        "dataTypeName" : "text",
+        "fieldName" : "interest_type",
+        "position" : 21,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158786,
+        "width" : 256,
+        "format" : { }
+      }, {
+        "id" : 239054401,
+        "name" : "Other Interest Type",
+        "dataTypeName" : "text",
+        "fieldName" : "other_interest_type",
+        "position" : 22,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158787,
+        "width" : 328,
+        "format" : { }
+      }, {
+        "id" : 239054402,
+        "name" : "Federally Taxable",
+        "dataTypeName" : "text",
+        "fieldName" : "federally_taxable",
+        "position" : 23,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158788,
+        "width" : 304,
+        "format" : { }
+      }, {
+        "id" : 239054403,
+        "name" : "First Optional Call Date",
+        "dataTypeName" : "text",
+        "fieldName" : "first_optional_call_date",
+        "position" : 24,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158789,
+        "width" : 388,
+        "format" : { }
+      }, {
+        "id" : 239054404,
+        "name" : "Final Maturity Date",
+        "dataTypeName" : "calendar_date",
+        "fieldName" : "final_maturity_date",
+        "position" : 25,
+        "renderTypeName" : "calendar_date",
+        "tableColumnId" : 30158790,
+        "width" : 328,
+        "format" : { }
+      }, {
+        "id" : 239054405,
+        "name" : "CAB Flag",
+        "dataTypeName" : "text",
+        "fieldName" : "cab_flag",
+        "position" : 26,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158791,
+        "width" : 196,
+        "format" : { }
+      }, {
+        "id" : 239054406,
+        "name" : "S and P Rating",
+        "dataTypeName" : "text",
+        "fieldName" : "s_and_p_rating",
+        "position" : 27,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158792,
+        "width" : 268,
+        "format" : { }
+      }, {
+        "id" : 239054407,
+        "name" : "Moody Rating",
+        "dataTypeName" : "text",
+        "fieldName" : "moody_rating",
+        "position" : 28,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158793,
+        "width" : 244,
+        "format" : { }
+      }, {
+        "id" : 239054408,
+        "name" : "Fitch Rating",
+        "dataTypeName" : "text",
+        "fieldName" : "fitch_rating",
+        "position" : 29,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158794,
+        "width" : 244,
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "right"
+        }
+      }, {
+        "id" : 239054409,
+        "name" : "Other Rating",
+        "dataTypeName" : "text",
+        "fieldName" : "other_rating",
+        "position" : 30,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158795,
+        "width" : 244,
+        "format" : {
+          "precisionStyle" : "standard",
+          "align" : "right",
+          "noCommas" : "false"
+        }
+      }, {
+        "id" : 239054410,
+        "name" : "Guarantor Flag",
+        "dataTypeName" : "text",
+        "fieldName" : "guarantor_flag",
+        "position" : 31,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158796,
+        "width" : 268,
+        "format" : { }
+      }, {
+        "id" : 239054411,
+        "name" : "Guarantor",
+        "dataTypeName" : "text",
+        "fieldName" : "guarantor",
+        "position" : 32,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158797,
+        "width" : 208,
+        "format" : { }
+      }, {
+        "id" : 239054412,
+        "name" : "Sale Type (Comp/Neg)",
+        "dataTypeName" : "text",
+        "fieldName" : "sale_type_comp_neg",
+        "position" : 33,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158798,
+        "width" : 340,
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 239054413,
+        "name" : "Private Placement Flag",
+        "dataTypeName" : "text",
+        "fieldName" : "private_placement_flag",
+        "position" : 34,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158799,
+        "width" : 364,
+        "format" : { }
+      }, {
+        "id" : 239054414,
+        "name" : "Underwriter",
+        "dataTypeName" : "text",
+        "fieldName" : "underwriter",
+        "position" : 35,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158800,
+        "width" : 232,
+        "format" : { }
+      }, {
+        "id" : 239054415,
+        "name" : "Purchaser",
+        "dataTypeName" : "text",
+        "fieldName" : "purchaser",
+        "position" : 36,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158801,
+        "width" : 208,
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "right"
+        }
+      }, {
+        "id" : 239054416,
+        "name" : "Placement Agent",
+        "dataTypeName" : "text",
+        "fieldName" : "placement_agent",
+        "position" : 37,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158802,
+        "width" : 280,
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "right"
+        }
+      }, {
+        "id" : 239054417,
+        "name" : "Financial Advisor",
+        "dataTypeName" : "text",
+        "fieldName" : "financial_advisor",
+        "position" : 38,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158803,
+        "width" : 304,
+        "format" : { }
+      }, {
+        "id" : 239054418,
+        "name" : "Bond Counsel",
+        "dataTypeName" : "text",
+        "fieldName" : "bond_counsel",
+        "position" : 39,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158804,
+        "width" : 244,
+        "format" : { }
+      }, {
+        "id" : 239054419,
+        "name" : "Co-Bond Counsel",
+        "dataTypeName" : "text",
+        "fieldName" : "co_bond_counsel",
+        "position" : 40,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158805,
+        "width" : 280,
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "right"
+        }
+      }, {
+        "id" : 239054420,
+        "name" : "Disclosure Counsel",
+        "dataTypeName" : "text",
+        "fieldName" : "disclosure_counsel",
+        "position" : 41,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158806,
+        "width" : 316,
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "right"
+        }
+      }, {
+        "id" : 239054421,
+        "name" : "Borrower Counsel",
+        "dataTypeName" : "text",
+        "fieldName" : "borrower_counsel",
+        "position" : 42,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158807,
+        "width" : 292,
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "right"
+        }
+      }, {
+        "id" : 239054422,
+        "name" : "Trustee",
+        "dataTypeName" : "text",
+        "fieldName" : "trustee",
+        "position" : 43,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158808,
+        "width" : 184,
+        "format" : { }
+      }, {
+        "id" : 239054423,
+        "name" : "Issue Costs Pct of Principal Amt",
+        "dataTypeName" : "number",
+        "fieldName" : "issue_costs_pct_of_principal_amt",
+        "position" : 44,
+        "renderTypeName" : "number",
+        "tableColumnId" : 30158809,
+        "width" : 484,
+        "format" : {
+          "precisionStyle" : "standard",
+          "align" : "right",
+          "noCommas" : "false"
+        }
+      }, {
+        "id" : 239054424,
+        "name" : "Total Issuance Costs",
+        "dataTypeName" : "number",
+        "fieldName" : "total_issuance_costs",
+        "position" : 45,
+        "renderTypeName" : "number",
+        "tableColumnId" : 30158810,
+        "width" : 340,
+        "format" : { }
+      }, {
+        "id" : 239054425,
+        "name" : "UW Takedown",
+        "dataTypeName" : "text",
+        "fieldName" : "uw_takedown",
+        "position" : 46,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158811,
+        "width" : 232,
+        "format" : { }
+      }, {
+        "id" : 239054426,
+        "name" : "UW Mngmt Fee",
+        "dataTypeName" : "text",
+        "fieldName" : "uw_mngmt_fee",
+        "position" : 47,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158812,
+        "width" : 244,
+        "format" : { }
+      }, {
+        "id" : 239054427,
+        "name" : "UW Expenses",
+        "dataTypeName" : "text",
+        "fieldName" : "uw_expenses",
+        "position" : 48,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158813,
+        "width" : 232,
+        "format" : { }
+      }, {
+        "id" : 239054428,
+        "name" : "UW Total Discount/Spread",
+        "dataTypeName" : "number",
+        "fieldName" : "uw_total_discount_spread",
+        "position" : 49,
+        "renderTypeName" : "number",
+        "tableColumnId" : 30158814,
+        "width" : 388,
+        "format" : { }
+      }, {
+        "id" : 239054429,
+        "name" : "Placement Agent Fee",
+        "dataTypeName" : "text",
+        "fieldName" : "placement_agent_fee",
+        "position" : 50,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158815,
+        "width" : 328,
+        "format" : { }
+      }, {
+        "id" : 239054430,
+        "name" : "Financial Advisor Fee",
+        "dataTypeName" : "text",
+        "fieldName" : "financial_advisor_fee",
+        "position" : 51,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158816,
+        "width" : 352,
+        "format" : { }
+      }, {
+        "id" : 239054431,
+        "name" : "Bond Counsel Fee",
+        "dataTypeName" : "text",
+        "fieldName" : "bond_counsel_fee",
+        "position" : 52,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158817,
+        "width" : 292,
+        "format" : { }
+      }, {
+        "id" : 239054432,
+        "name" : "Co-Bond Counsel Fee",
+        "dataTypeName" : "text",
+        "fieldName" : "co_bond_counsel_fee",
+        "position" : 53,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158818,
+        "width" : 328,
+        "format" : { }
+      }, {
+        "id" : 239054433,
+        "name" : "Disclosure Counsel Fee",
+        "dataTypeName" : "text",
+        "fieldName" : "disclosure_counsel_fee",
+        "position" : 54,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158819,
+        "width" : 364,
+        "format" : { }
+      }, {
+        "id" : 239054434,
+        "name" : "Borrower Counsel Fee",
+        "dataTypeName" : "text",
+        "fieldName" : "borrower_counsel_fee",
+        "position" : 55,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158820,
+        "width" : 340,
+        "format" : { }
+      }, {
+        "id" : 239054435,
+        "name" : "Trustee Fee",
+        "dataTypeName" : "text",
+        "fieldName" : "trustee_fee",
+        "position" : 56,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158821,
+        "width" : 232,
+        "format" : { }
+      }, {
+        "id" : 239054436,
+        "name" : "Credit Enhancement Fee",
+        "dataTypeName" : "text",
+        "fieldName" : "credit_enhancement_fee",
+        "position" : 57,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158822,
+        "width" : 364,
+        "format" : { }
+      }, {
+        "id" : 239054437,
+        "name" : "Rating Agency Fee",
+        "dataTypeName" : "text",
+        "fieldName" : "rating_agency_fee",
+        "position" : 58,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158823,
+        "width" : 304,
+        "format" : { }
+      }, {
+        "id" : 239054438,
+        "name" : "Other Issuance Expenses",
+        "dataTypeName" : "text",
+        "fieldName" : "other_issuance_expenses",
+        "position" : 59,
+        "renderTypeName" : "text",
+        "tableColumnId" : 30158824,
+        "width" : 376,
+        "format" : { }
+      } ],
+      "grants" : [ {
+        "inherited" : false,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "renderTypeConfig" : {
+          "visible" : {
+            "table" : true
+          }
+        },
+        "rowLabel" : "Row",
+        "availableDisplayTypes" : [ "table", "fatrow", "page" ],
+        "jsonQuery" : {
+          "order" : [ {
+            "ascending" : true,
+            "columnFieldName" : "net_issue_discount"
+          } ]
+        }
+      },
+      "owner" : {
+        "id" : "3qdj-b5hf",
+        "displayName" : "Devinder Kumar",
+        "roleName" : "administrator",
+        "screenName" : "Devinder Kumar",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "create_dashboards", "manage_provenance", "create_story", "edit_story_title_desc", "create_story_copy", "delete_story", "manage_story_collaborators", "manage_story_visibility", "manage_story_public_version", "edit_story", "view_unpublished_story", "view_story" ]
+      },
+      "query" : {
+        "orderBys" : [ {
+          "ascending" : true,
+          "expression" : {
+            "columnId" : 239054394,
+            "type" : "column"
+          }
+        } ]
+      },
+      "rights" : [ "read" ],
+      "sortBys" : [ {
+        "id" : 0,
+        "viewColumnId" : 239054394,
+        "flags" : [ "asc" ]
+      } ],
+      "tableAuthor" : {
+        "id" : "3qdj-b5hf",
+        "displayName" : "Devinder Kumar",
+        "roleName" : "administrator",
+        "screenName" : "Devinder Kumar",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "create_dashboards", "manage_provenance", "create_story", "edit_story_title_desc", "create_story_copy", "delete_story", "manage_story_collaborators", "manage_story_visibility", "manage_story_public_version", "edit_story", "view_unpublished_story", "view_story" ]
+      },
+      "tags" : [ "debt watch" ],
+      "flags" : [ "default" ]
+    }
+  },
+  "data" : [ [ 49549, "E892484A-5D5F-40EC-9E55-5AF24EA6A516", 49549, 1453490647, "934811", 1453490647, "934811", null, "2015-0448", "SOLD", "2015-02-18T00:00:00", "Los Angeles", "NO", "NO", null, "Special Districts", "Non-Profit Corporation", "Los Angeles Municipal Improvement Corporation", "Series A-1", "10000000", "10000000", "0", "0", "Commercial paper", "Project, Interim Financing", "Bond proceeds", "0", "0", "VAR", null, null, null, "2015-03-18T00:00:00", "N/A", "S:A-1+", "M:P-1", "F:F-1+", "Not Rated", "LOC", "Wells Fargo Bank National Association", "Neg", "NO", "Wells Fargo Bank National Association", " ", " ", "KNN Public Finance", "Hawkins Delafield & Wood LLP", " ", " ", " ", "Wells Fargo Bank National Association", null, null, "0", "0", "0", null, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+, [ 47819, "80A20788-E140-4092-A6EF-CD3EE2B15307", 47819, 1453490645, "934811", 1453490645, "934811", null, "2014-0663", "SOLD", "2014-05-08T00:00:00", "San Diego", "NO", "NO", null, "Special Districts", "Municipal Water District", "Ramona Municipal Water District", "San Vicente Rd Pipeline Relocation", "4808000", "4808000", "0", "0", "Certificates of participation/leases", "Water Supply, Storage, Distribution", "Public enterprise revenues", "3.602", "3.06", null, null, "Federally Taxable", "10/1/2018 00:00:00", "2029-10-01T00:00:00", "N/A", "Not Rated", "Not Rated", "Not Rated", "Not Rated", " ", " ", "Neg", "YES", " ", "JP Morgan Chase Bank", " ", "Fieldman Rolapp & Associates", "Best Best & Krieger LLP", " ", " ", " ", " ", "1.42", "68221.2", "0", "0", "0", "0", "721.2", "26500", "31000", "0", "0", null, "10000", "0", "0", null ]
+, [ 48471, "DF06E2EF-B470-4F55-BB51-655AF0F6B4C0", 48471, 1453490646, "934811", 1453490646, "934811", null, "2014-1860", "SOLD", "2014-08-29T00:00:00", "Riverside", "NO", "NO", null, "JPA & Marks-Roos", "Joint Powers Agency", "Western Riverside Council of Governments", "7.950% Interest Rate Series 140829-CA-RA-10B", "649597", "649597", "0", "0", "Special assessment bond", "Residential Energy Conservation, Improvement", "Special assessments", "7.95", "7.95", null, null, "Federally Taxable", null, "2025-09-02T00:00:00", "N/A", "Not Rated", "Not Rated", "Not Rated", "Not Rated", " ", " ", "Neg", "YES", " ", "RA HERO Bond Holdings LLC", "Westhoff Cone & Holmstedt", "The PFM Group/Public Financial Management Inc", "Best Best & Krieger LLP", " ", " ", " ", "Deutsche Bank National Trust Company", "7.76", "50387.36", "0", "0", "0", "0", "1299.19", "0", "6268.61", "0", "0", "0", "750", "0", "0", "42069.56" ]
+, [ 51316, "0600F05A-3099-4D62-9F5A-B504AC034012", 51316, 1453490650, "934811", 1453490650, "934811", null, "2015-2133", "SOLD", "2015-09-17T00:00:00", "Multiple", "NO", "NO", null, "JPA & Marks-Roos", "Joint Powers Agency", "California Statewide Communities Development Authority", "CaliforniaFirst PACE 7.99% Interest Rate Series M1.20150917.15", "414965", "414965", "0", "0", "Special assessment bond", "Residential Energy Conservation, Improvement", "Special assessments", "7.99", "7.99", null, null, "Federally Taxable", "9/2/2025 00:00:00", "2031-09-02T00:00:00", "N/A", "Not Rated", "Not Rated", "Not Rated", "Not Rated", " ", " ", "Neg", "YES", " ", "Golden Bear Depositor LLC", " ", " ", "Jones Hall A Professional Law Corp", " ", " ", " ", "Wilmington Trust", "5.92", "24547.14", "0", "0", "0", "0", "0", "0", "3575.16", "0", "0", "0", "0", "0", "0", "20971.98" ]
+, [ 48472, "13283B6B-B7F6-4E4F-830A-71CE2A0D8518", 48472, 1453490646, "934811", 1453490646, "934811", null, "2014-1861", "SOLD", "2014-08-29T00:00:00", "Riverside", "NO", "NO", null, "JPA & Marks-Roos", "Joint Powers Agency", "Western Riverside Council of Governments", "8.750% Interest Rate Series 140829-CA-RA-15B", "1065167", "1065167", "0", "0", "Special assessment bond", "Residential Energy Conservation, Improvement", "Special assessments", "8.75", "8.75", null, null, "Federally Taxable", "8/30/2024 00:00:00", "2030-09-02T00:00:00", "N/A", "Not Rated", "Not Rated", "Not Rated", "Not Rated", " ", " ", "Neg", "YES", " ", "RA HERO Bond Holdings LLC", "Westhoff Cone & Holmstedt", "The PFM Group/Public Financial Management Inc", "Best Best & Krieger LLP", " ", " ", " ", "Deutsche Bank National Trust Company", "7.69", "81955.75", "0", "0", "0", "0", "2130.34", "0", "10278.85", "0", "0", "0", "750", "0", "0", "68796.56" ]
+, [ 51315, "29F616E7-2269-4E94-AE02-941573F76342", 51315, 1453490650, "934811", 1453490650, "934811", null, "2015-2132", "SOLD", "2015-09-17T00:00:00", "Multiple", "NO", "NO", null, "JPA & Marks-Roos", "Joint Powers Agency", "California Statewide Communities Development Authority", "CaliforniaFirst PACE 7.59% Interest Rate Series M1.20150917.10", "126567", "126567", "0", "0", "Special assessment bond", "Residential Energy Conservation, Improvement", "Special assessments", "7.59", "7.59", null, null, "Federally Taxable", null, "2026-09-02T00:00:00", "N/A", "Not Rated", "Not Rated", "Not Rated", "Not Rated", " ", " ", "Neg", "YES", " ", "Golden Bear Depositor LLC", " ", " ", "Jones Hall A Professional Law Corp", " ", " ", " ", "Wilmington Trust", "6.11", "7735.26", "0", "0", "0", "0", "0", "0", "1092.69", "0", "0", "0", "0", "0", "0", "6642.57" ]
+, [ 46549, "E4AA48D2-B7D4-42ED-A0B5-85909F9712C8", 46549, 1453490643, "934811", 1453490643, "934811", null, "2013-1606", "SOLD", "2013-08-02T00:00:00", "Riverside", "NO", "NO", null, "JPA & Marks-Roos", "Joint Powers Agency", "Western Riverside Council of Governments", "8.250% Int Rate, Series 130802-01-IN-20", "1322743", "1322743", "0", "0", "Special assessment bond", "Residential Energy Conservation, Improvement", "Special assessments", "8.25", "0", null, null, "Federally Taxable", "3/2/2014 00:00:00", "2034-09-02T00:00:00", "N/A", "Not Rated", "Not Rated", "Not Rated", "Not Rated", " ", " ", "Neg", "YES", " ", "Inland Bond Acquisitions LLC", "Westhoff Cone & Holmstedt", "The PFM Group/Public Financial Management Inc", "Best Best & Krieger LLP", " ", " ", " ", "US Bank National Association", "7.39", "97739.79", "0", "0", "0", "0", "4629.61", "0", "13227.43", "0", "0", null, "750", "0", "0", "79132.75" ]
+, [ 46548, "7EF04E0A-AD5C-4F1C-972A-A8E59DA3169A", 46548, 1453490643, "934811", 1453490643, "934811", null, "2013-1605", "SOLD", "2013-08-02T00:00:00", "Riverside", "NO", "NO", null, "JPA & Marks-Roos", "Joint Powers Agency", "Western Riverside Council of Governments", "7.750% Int Rate, Series 130802-01-IN-15", "908430", "908430", "0", "0", "Special assessment bond", "Residential Energy Conservation, Improvement", "Special assessments", "7.75", "0", null, null, "Federally Taxable", "3/2/2014 00:00:00", "2029-09-02T00:00:00", "N/A", "Not Rated", "Not Rated", "Not Rated", "Not Rated", " ", " ", "Neg", "YES", " ", "Inland Bond Acquisitions LLC", "Westhoff Cone & Holmstedt", "The PFM Group/Public Financial Management Inc", "Best Best & Krieger LLP", " ", " ", " ", "US Bank National Association", "7.43", "67534.99", "0", "0", "0", "0", "3179.52", "0", "9084.32", "0", "0", null, "750", "0", "0", "54521.15" ]
+, [ 51314, "D89FE59D-3FE6-4F2B-ACEE-3AA2DAE080AE", 51314, 1453490650, "934811", 1453490650, "934811", null, "2015-2131", "SOLD", "2015-09-17T00:00:00", "Multiple", "NO", "NO", null, "JPA & Marks-Roos", "Joint Powers Agency", "California Statewide Communities Development Authority", "CaliforniaFirst PACE 6.75% Interest Rate Series M1 20150917.05", "125624", "125624", "0", "0", "Special assessment bond", "Residential Energy Conservation, Improvement", "Special assessments", "6.75", "6.75", null, null, "Federally Taxable", null, "2021-09-02T00:00:00", "N/A", "Not Rated", "Not Rated", "Not Rated", "Not Rated", " ", " ", "Neg", "YES", " ", "Golden Bear Depositor LLC", " ", " ", "Jones Hall A Professional Law Corp", " ", " ", " ", "Wilmington Trust", "6.1", "7657.46", "0", "0", "0", "0", "0", "0", "1094.91", "0", "0", "0", "0", "0", "0", "6562.55" ]
+  ]
+}
