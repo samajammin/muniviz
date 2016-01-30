@@ -10,6 +10,8 @@
 // var dateBarChart  = dc.barChart("#date-chart");
 // var activeHours;
 var volumeChart = dc.barChart('#monthly-volume-chart');
+var dataTable = dc.dataTable("#table-chart");
+var purposeChart = dc.rowChart("#purpose-chart");
 
   // sample issuance
 
@@ -47,7 +49,7 @@ var volumeChart = dc.barChart('#monthly-volume-chart');
   //       }
   //   }
 
-d3.json("http://search.neighborly.com/issuances/_search?size=10000", function(data){
+d3.json("http://search.neighborly.com/issuances/_search?size=1000", function(data){
   var results = data['hits']['hits'];
   var cf = crossfilter(results);
   results.forEach(function(d) {
@@ -85,14 +87,17 @@ d3.json("http://search.neighborly.com/issuances/_search?size=10000", function(da
     // var issuancesBySaleDate = cf.dimension(function(d) { return d._source.datedDate; });
     var issuancesBySaleDate = cf.dimension(function(d) { return d.saleDate; });
     var issuancesBySaleYear = cf.dimension(function(d) { return d.saleYear; });
+    var issuancesById = cf.dimension(function(d) { return d._source.msrbID; });
+    var issuancesByPurpose = cf.dimension(function(d) { return d._source.purpose; });
     // var issuancesByCounty = cf.dimension(function(d) { return d[11]; });
     // var issuancesByIssuer = cf.dimension(function(d) { return d[17]; });
     // var issuancesByPurpose = cf.dimension(function(d) { return d[24]; });
     var minDate = issuancesBySaleDate.bottom(2)[1].saleDate;
     var maxDate = issuancesBySaleDate.top(1)[0].saleDate;
-
-    var issuanceCountBySaleDate = issuancesBySaleDate.group().reduceSum(function(d) {return d.totalAmount;});
+    var issuanceSumBySaleDate = issuancesBySaleDate.group().reduceSum(function(d) {return d.totalAmount;});
     var issuanceCountBySaleYear = issuancesBySaleYear.group().reduceCount(function(d) {return d.totalAmount;});
+    var issuanceSumByPurpose = issuancesByPurpose.group().reduceSum(function(d) {return d.totalAmount;});
+
 
 
 // CHARTS!
@@ -104,7 +109,7 @@ d3.json("http://search.neighborly.com/issuances/_search?size=10000", function(da
         .margins({top: 10, right: 100, bottom: 30, left: 100})
         .dimension(issuancesBySaleDate)
         // .dimension(issuancesBySaleYear)
-        .group(issuanceCountBySaleDate)
+        .group(issuanceSumBySaleDate)
         // .group(issuanceCountBySaleYear)
         .round(dc.round.floor)
         // .alwaysUseRounding(true)
@@ -118,6 +123,47 @@ d3.json("http://search.neighborly.com/issuances/_search?size=10000", function(da
         // .colors(["#424242"])
         // .yAxisLabel("Decibels");
 
+            //#### Bar Chart
+            // Create a bar chart and use the given css selector as anchor. You can also specify
+            // an optional chart group for this chart to be scoped within. When a chart belongs
+            // to a specific group then any interaction with such chart will only trigger redraw
+            // on other charts within the same chart group.
+            /* dc.barChart('#volume-month-chart') */
+        purposeChart
+            .width($( "#purpose-chart-col" ).width())
+            .height(300)
+            .margins({top: 10, left: 20, right: 10, bottom: 20})
+            .group(issuanceSumByPurpose)
+            .dimension(issuancesByPurpose)
+            .label(function (p) {
+                if (p.key) {
+                  return p.key;
+                }
+                return "Null"
+            })
+            .renderTitle(true)
+            .title(function (p) {
+                return "Issuance By Purpose";
+            })
+            //.x(d3.scale.linear().range([0,300]).domain([70,80]))
+            .elasticX(true)
+            .xAxis().ticks(5);
+
+        dataTable
+            .width($( "#table-chart" ).width())
+            .height(800)
+            .dimension(issuancesById)
+            .group(function(d) { return "Issuance Detail"})
+            .size(30)
+            .columns([
+                function(d) { return d._source.datedDate; },
+                function(d) { return '<a href= \"https://pro.neighborly.com/' + d._source.jurisdiction_id + '\" target=\"_blank\">' + d._source.jurisdiction_name + '</a>'; },
+                function(d) { return d._source.totalAmount; },
+                function(d) { return '<a href= "' + d._source.msrbURL + '" target=\"_blank\">' + d._source.description + '</a>'; }
+            ])
+            .sortBy(function(d){ return d._source.datedDate; })
+            .order(d3.descending);
+
         dc.renderAll();
     });
 
@@ -125,7 +171,7 @@ d3.json("http://search.neighborly.com/issuances/_search?size=10000", function(da
     // volumeChart.xUnits(function(){return 60;});
 
 //
-//      dowChart
+//      purposeChart
 //            .width($( "#dow-chart-col" ).width())
 //            .height(300)
 //            .margins({top: 10, left: 20, right: 10, bottom: 20})
@@ -243,29 +289,6 @@ d3.json("http://search.neighborly.com/issuances/_search?size=10000", function(da
 //     //singleHourRingChart.valueAccessor(function(p) {return p.value.avg; });
 //
 //
-//     //#### Bar Chart
-//     // Create a bar chart and use the given css selector as anchor. You can also specify
-//     // an optional chart group for this chart to be scoped within. When a chart belongs
-//     // to a specific group then any interaction with such chart will only trigger redraw
-//     // on other charts within the same chart group.
-//     /* dc.barChart('#volume-month-chart') */
-//     //hodChart
-//     //    .width(300)
-//     //    .height(300)
-//     //    .margins({top: 10, right: 50, bottom: 30, left: 40})
-//     //    .dimension(hodDim)
-//     //    .group(hodAvg)
-//     //    .elasticY(true)
-//     //    //.y(d3.scale.linear().domain([60, 90]))
-//     //    // (optional) set gap between bars manually in px, :default=2
-//     //    .gap(1)
-//     //    // (optional) set filter brush rounding
-//     //    .round(dc.round.floor)
-//     //    .alwaysUseRounding(true)
-//     //    .x(d3.scale.linear().domain([0, 23]))
-//     //    .renderHorizontalGridLines(true);
-//     //
-//     //hodChart.valueAccessor(function(p) {return p.value.avg; });
 //
 //
 //     dateBarChart
