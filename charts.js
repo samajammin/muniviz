@@ -12,6 +12,7 @@
 var volumeChart = dc.barChart('#monthly-volume-chart');
 var dataTable = dc.dataTable("#table-chart");
 var purposeChart = dc.rowChart("#purpose-chart");
+var debtTypeChart = dc.rowChart("#debt-type-chart");
 
   // sample issuance
 
@@ -49,7 +50,7 @@ var purposeChart = dc.rowChart("#purpose-chart");
   //       }
   //   }
 
-d3.json("http://search.neighborly.com/issuances/_search?size=1000", function(data){
+d3.json("http://search.neighborly.com/issuances/_search?size=10000", function(data){
   var results = data['hits']['hits'];
   var cf = crossfilter(results);
   results.forEach(function(d) {
@@ -89,6 +90,7 @@ d3.json("http://search.neighborly.com/issuances/_search?size=1000", function(dat
     var issuancesBySaleYear = cf.dimension(function(d) { return d.saleYear; });
     var issuancesById = cf.dimension(function(d) { return d._source.msrbID; });
     var issuancesByPurpose = cf.dimension(function(d) { return d._source.purpose; });
+    var issuancesByDebtType = cf.dimension(function(d) { return d._source.debtType; });
     // var issuancesByCounty = cf.dimension(function(d) { return d[11]; });
     // var issuancesByIssuer = cf.dimension(function(d) { return d[17]; });
     // var issuancesByPurpose = cf.dimension(function(d) { return d[24]; });
@@ -97,6 +99,7 @@ d3.json("http://search.neighborly.com/issuances/_search?size=1000", function(dat
     var issuanceSumBySaleDate = issuancesBySaleDate.group().reduceSum(function(d) {return d.totalAmount;});
     var issuanceCountBySaleYear = issuancesBySaleYear.group().reduceCount(function(d) {return d.totalAmount;});
     var issuanceSumByPurpose = issuancesByPurpose.group().reduceSum(function(d) {return d.totalAmount;});
+    var issuanceSumByDebtType = issuancesByDebtType.group().reduceSum(function(d) {return d.totalAmount;});
 
 
 
@@ -135,6 +138,26 @@ d3.json("http://search.neighborly.com/issuances/_search?size=1000", function(dat
             .margins({top: 10, left: 20, right: 10, bottom: 20})
             .group(issuanceSumByPurpose)
             .dimension(issuancesByPurpose)
+            .label(function (p) {
+                if (p.key) {
+                  return p.key;
+                }
+                return "Null"
+            })
+            .renderTitle(true)
+            .title(function (p) {
+                return "Issuance By Purpose";
+            })
+            //.x(d3.scale.linear().range([0,300]).domain([70,80]))
+            .elasticX(true)
+            .xAxis().ticks(5);
+
+        debtTypeChart
+            .width($( "#purpose-chart-col" ).width())
+            .height(300)
+            .margins({top: 10, left: 20, right: 10, bottom: 20})
+            .group(issuanceSumByDebtType)
+            .dimension(issuancesByDebtType)
             .label(function (p) {
                 if (p.key) {
                   return p.key;
