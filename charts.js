@@ -184,7 +184,8 @@ d3.json("http://search.neighborly.com/issuances/_search?size=10000", function(da
                 function(d) { return d._source.totalAmount; },
                 function(d) { return '<a href= "' + d._source.msrbURL + '" target=\"_blank\">' + d._source.description + '</a>'; }
             ])
-            .sortBy(function(d){ return d._source.datedDate; })
+            // sort doesn't seem to be working...
+            .sortBy(function(d){ return d.saleDate; })
             .order(d3.descending);
 
         dc.renderAll();
